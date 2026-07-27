@@ -61,6 +61,6 @@ dependencies {
     // sources need no changes.
     implementation("com.microsoft.onnxruntime:onnxruntime-android:1.21.1")
     implementation("org.opencv:opencv:4.13.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0")
     implementation("androidx.core:core-ktx:1.13.1")
 }
