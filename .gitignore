@@ -1,0 +1,19 @@
+# Flutter / Dart build artifacts
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+.packages
+.pub-cache/
+.pub/
+pubspec.lock
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# CocoaPods / Gradle
+.cocoapods/
+.gradle/
+local.properties

@@ -1,0 +1,20 @@
+paddle_ocr_native
+Copyright 2026 flespark contributors
+
+This product includes software developed by the PaddlePaddle Authors as part
+of PaddleOCR (https://github.com/PaddlePaddle/PaddleOCR), licensed under the
+Apache License 2.0. Vendored files retain their original copyright notices.
+
+This product bundles PP-OCRv6 small detection and recognition ONNX models
+published by PaddlePaddle under the Apache License 2.0.
+
+The iOS implementation includes Clipper1 by Angus Johnson, licensed under the
+Boost Software License 1.0. Its license is preserved at
+ios/Classes/ThirdParty/Clipper1/LICENSE.
+
+Runtime dependencies include ONNX Runtime, OpenCV, and Yams. Their source and
+license information is available from their respective package distributions.
+
+PaddleOCR and PaddlePaddle are names of their respective owners. This project
+is an independent community package and is not an official PaddlePaddle
+Flutter distribution.

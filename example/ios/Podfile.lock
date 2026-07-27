@@ -1,0 +1,43 @@
+PODS:
+  - Flutter (1.0.0)
+  - onnxruntime-c (1.27.0)
+  - onnxruntime-objc (1.27.0):
+    - onnxruntime-objc/Core (= 1.27.0)
+  - onnxruntime-objc/Core (1.27.0):
+    - onnxruntime-c (= 1.27.0)
+  - OpenCV (4.3.0)
+  - paddle_ocr_native (0.1.0):
+    - Flutter
+    - onnxruntime-objc (~> 1.24)
+    - OpenCV (~> 4.3.0)
+    - Yams (~> 5.0)
+  - Yams (5.0.6)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - paddle_ocr_native (from `.symlinks/plugins/paddle_ocr_native/ios`)
+
+SPEC REPOS:
+  trunk:
+    - onnxruntime-c
+    - onnxruntime-objc
+    - OpenCV
+    - Yams
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  paddle_ocr_native:
+    :path: ".symlinks/plugins/paddle_ocr_native/ios"
+
+SPEC CHECKSUMS:
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  onnxruntime-c: 412ab51682e622e3d77ddc9176aa92517d171820
+  onnxruntime-objc: f88cca350e7603f81c31b5823f3ddfaa67da9f84
+  OpenCV: 681e0451c1e54c5930a8922277f817ed5d5ab459
+  paddle_ocr_native: 3da689de22a02ef7600fdfb010a4b22bffbde97d
+  Yams: e10dae147f517ed57ecae37c5e8681bdf8fcab65
+
+PODFILE CHECKSUM: 4ee781fc8544e31b5173da01b11aa6bcb4b5dc62
+
+COCOAPODS: 1.17.0

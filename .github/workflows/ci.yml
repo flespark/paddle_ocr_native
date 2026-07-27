@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  dart-and-android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.44.0
+          channel: stable
+          cache: true
+      - name: Verify bundled models
+        run: |
+          echo "d73e0058b7a8086bbd57f3d10b8bcd4ff95363f67e06e2762b5e814fe9c9410e  assets/models/det/inference.onnx" | sha256sum --check
+          echo "193f435274bf9f0b5f71a929bbfbcf148282df7e633b34e7c373e8f44741b516  assets/models/det/inference.yml" | sha256sum --check
+          echo "5435fd747c9e0efe15a96d0b378d5bd157e9492ed8fd80edf08f30d02fa24634  assets/models/rec/inference.onnx" | sha256sum --check
+          echo "ab078671bb49f06228eadccd34f1bb501e157f7a047095ffb943ba81512c77d1  assets/models/rec/inference.yml" | sha256sum --check
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
+      - run: flutter pub publish --dry-run
+      - run: flutter pub get
+        working-directory: example
+      - run: flutter test
+        working-directory: example
+      - run: flutter build apk --debug --target-platform android-arm64
+        working-directory: example
+      - name: Verify Android APK contains only arm64-v8a JNI libraries
+        working-directory: example
+        run: |
+          if unzip -Z1 build/app/outputs/flutter-apk/app-debug.apk \
+            | grep -E '^lib/(armeabi-v7a|x86|x86_64)/'; then
+            echo "Unsupported JNI ABI found in Android APK"
+            exit 1
+          fi
+
+  ios-build:
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.44.0
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter pub get
+        working-directory: example
+      - run: flutter build ios --release --no-codesign
+        working-directory: example

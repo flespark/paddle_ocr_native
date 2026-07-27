@@ -1,0 +1,9 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    # Vendored plugin uses generated MethodChannel stubs in tests.
+    invalid_annotation_target: ignore
+
+dart:
+  # Generated plugin code uses generated prefixes.
