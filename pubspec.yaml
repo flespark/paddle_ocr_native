@@ -1,6 +1,6 @@
 name: paddle_ocr_native
 description: "Offline PaddleOCR PP-OCRv6 text detection and recognition for Flutter on Android and iOS, powered by ONNX Runtime."
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/flespark/paddle_ocr_native
 issue_tracker: https://github.com/flespark/paddle_ocr_native/issues
 topics:

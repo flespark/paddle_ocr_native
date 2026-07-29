@@ -1,3 +1,9 @@
+## 0.1.1
+
+- Enable trusted publishing from GitHub Actions with short-lived OIDC
+  credentials.
+- No public API or native runtime behavior changes.
+
 ## 0.1.0
 
 - Initial public release.
